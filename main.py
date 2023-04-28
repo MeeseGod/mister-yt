@@ -9,16 +9,22 @@ def submit():
     with YoutubeDL() as ydl:
         ydl.download(URLS)
 
+def clearEntry():
+    entry.delete(END, 0)
+
 window = Tk()
 entry = Entry()
+label = Label(text="Paste YT Link:")
+
+label.pack()
 
 # set window resolution
 window.geometry("500x200")
 
-folderSelected = filedialog.askdirectory()
+# folderSelected = filedialog.askdirectory()
 
 # textEntry widget
-entry.insert(0, "Paste Youtube Link")
+entry.insert(0, "")
 entry.pack()
 
 # submitButton widget
